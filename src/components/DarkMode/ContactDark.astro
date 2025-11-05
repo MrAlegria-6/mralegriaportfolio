@@ -69,7 +69,6 @@ const formSubmitEmail = "mralegria12@gmail.com";
       </svg>
     </button>
 
-    <!-- Mensaje de éxito -->
     <div class="success-message" id="successMessage">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="whitesmoke" stroke-width="2">
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
@@ -292,13 +291,11 @@ const formSubmitEmail = "mralegria12@gmail.com";
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    // Protección honeypot (bots)
     const honeypot = form.querySelector('input[name="_honey"]');
     if (honeypot && honeypot.value) {
       return;
     }
 
-    // Cambiar texto del botón
     submitBtn.disabled = true;
     const originalText = submitBtn.querySelector('.btn-text').textContent;
     submitBtn.querySelector('.btn-text').textContent = 'Enviando...';
@@ -306,10 +303,9 @@ const formSubmitEmail = "mralegria12@gmail.com";
     const formData = new FormData(form);
 
     try {
-      // 👇 Aquí está el cambio principal
       const response = await fetch(`https://formsubmit.co/${formSubmitEmail}`, {
         method: 'POST',
-        body: formData, // ✅ enviamos el FormData directamente
+        body: formData, 
       });
 
       if (response.ok) {

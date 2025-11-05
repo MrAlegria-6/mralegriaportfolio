@@ -267,7 +267,6 @@ const educacion = [
 </style>
 
 <script>
-  // Expansión para los detalles al hacer click en el cuadro o el botón
   document.addEventListener("DOMContentLoaded", () => {
     const timelineContents = document.querySelectorAll(".timeline-content");
 
@@ -276,9 +275,8 @@ const educacion = [
       const details = content.querySelector(".timeline-details");
       const icon = content.querySelector(".toggle-icon");
 
-      // Función para alternar expansión
       const toggleDetails = (e) => {
-        // Evita que el botón propague el evento dos veces
+      
         if (e.target === button || e.currentTarget === content) {
           const isOpen =
             details.style.maxHeight && details.style.maxHeight !== "0px";
@@ -292,9 +290,8 @@ const educacion = [
         }
       };
 
-      // Click en el botón
+      
       button.addEventListener("click", toggleDetails);
-      // Click en el cuadro (excepto si se hace click en el botón)
       content.addEventListener("click", (e) => {
         if (e.target !== button && !button.contains(e.target)) {
           toggleDetails(e);

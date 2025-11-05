@@ -71,11 +71,9 @@
     render() {
       if (!this.context || !this.canvas) return;
       
-      // Fondo negro con transparencia para efecto de estela
       this.context.fillStyle = 'rgba(245, 245, 245, 1)';
       this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
       
-      // Color blanco semi-transparente para las estrellas
       this.context.strokeStyle = 'rgba(38, 37, 37, 1)';
       
       for (let i = 0; i < this.stars.length; i++) {
@@ -144,7 +142,6 @@
     }
   }
 
-  // Inicializar cuando el DOM esté listo
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       new Stars({ stars: 50, radius: 0.8, vel: 0.1 });

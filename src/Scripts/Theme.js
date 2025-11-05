@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector("#theme-toggle");
   const html = document.documentElement;
 
-  // Cargar preferencia previa
   if (localStorage.getItem("theme") === "dark") {
     html.classList.add("dark");
   }
@@ -11,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   toggle.addEventListener("click", () => {
     html.classList.toggle("dark");
 
-    // Guardar preferencia
     if (html.classList.contains("dark")) {
       localStorage.setItem("theme", "dark");
     } else {

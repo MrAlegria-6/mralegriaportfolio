@@ -38,7 +38,6 @@ const proyectos = [
 
 <section class="proyectos-showcase">
   <div class="container">
-    <!-- Header -->
     <div class="header">
       <h2 class="title">
         My <span class="highlight">Proyects</span>
@@ -49,7 +48,7 @@ const proyectos = [
       </p>
     </div>
 
-    <!-- Projects Grid -->
+
     <div class="projects-grid">
       {proyectos.map((proyecto, index) => (
         <article class="project-card" style={`animation-delay: ${index * 0.1}s`}>
@@ -123,7 +122,6 @@ const proyectos = [
     margin: 0 auto;
   }
 
-  /* Header */
   .header {
     text-align: center;
     margin-bottom: 4rem;
@@ -170,7 +168,6 @@ const proyectos = [
     line-height: 1.7;
   }
 
-  /* Projects Grid */
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -211,7 +208,6 @@ const proyectos = [
     transform: rotate(45deg) translate(4rem, -4rem) scale(1.5);
   }
 
-  /* Image Container */
   .image-container {
     position: relative;
     height: 14rem;
@@ -314,7 +310,6 @@ const proyectos = [
     margin-bottom: 1rem;
   }
 
-  /* Tech Tags */
   .tech-tags {
     display: flex;
     flex-wrap: wrap;
@@ -337,7 +332,6 @@ const proyectos = [
     color: whitesmoke;
   }
 
-  /* Actions */
   .actions {
     display: flex;
     gap: 0.75rem;
@@ -387,7 +381,7 @@ const proyectos = [
     box-shadow: 0 6px 16px linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
   }
 
-  /* Accent Line */
+
   .accent-line {
     position: absolute;
     bottom: 0;
@@ -404,7 +398,6 @@ const proyectos = [
   }
 
 
-  /* Responsive */
   @media (max-width: 768px) {
     .proyectos-showcase {
       padding: 3rem 1rem;

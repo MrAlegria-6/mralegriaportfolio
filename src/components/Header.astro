@@ -29,7 +29,6 @@ import "@fontsource/k2d";
     </ul>
 
     <div class="nav-controls">
-      <!-- Botón que lleva a /dark -->
       <div class="container">
         <a href="/dark" class="toggle" aria-label="Cambiar a modo oscuro">
           <div class="icon icon--moon">
@@ -67,7 +66,6 @@ import "@fontsource/k2d";
 </header>
 
 <style>
-  /* Header base */
   .header {
     background: whitesmoke;
     backdrop-filter: blur(10px);
@@ -131,7 +129,6 @@ import "@fontsource/k2d";
     width: 100%;
   }
 
-  /* Nav Controls Container */
   .nav-controls {
     display: flex;
     align-items: center;
@@ -178,7 +175,6 @@ import "@fontsource/k2d";
     transform: scale(1) rotate(360deg);
   }
 
-  /* Responsive */
   @media (max-width: 768px) {
     .nav-list {
       gap: 1.5rem;
@@ -239,7 +235,6 @@ import "@fontsource/k2d";
       const timeElapsed = currentTime - startTime;
       const progress = Math.min(timeElapsed / duration, 1);
 
-      // Función de easing para hacer el scroll más suave
       const ease =
         progress < 0.5
           ? 2 * progress * progress
@@ -272,8 +267,7 @@ import "@fontsource/k2d";
           const offsetPosition =
             elementPosition + window.pageYOffset - headerHeight;
 
-          // Usar nuestra función de scroll suave personalizada
-          smoothScrollTo(offsetPosition, 800); // 800ms de duración
+          smoothScrollTo(offsetPosition, 800); 
         }
       });
     });

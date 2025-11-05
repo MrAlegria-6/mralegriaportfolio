@@ -1,5 +1,5 @@
 ---
-// src/components/LogrosReconocimientos.astro
+
 const logros = [
   {
     tipo: "Certification",
@@ -35,7 +35,6 @@ const categorias = ["All", "Certification", "Award", "Recognition"];
     </p>
   </div>
 
-  <!-- Filtros -->
   <div class="filtros-container">
     {
       categorias.map((categoria) => (
@@ -46,7 +45,6 @@ const categorias = ["All", "Certification", "Award", "Recognition"];
     }
   </div>
 
-  <!-- Grid de Logros -->
   <div class="logros-grid">
     {
       logros.map((logro) => (
@@ -75,7 +73,6 @@ const categorias = ["All", "Certification", "Award", "Recognition"];
     }
   </div>
 
-  <!-- Estadísticas -->
   <div class="stats-container">
     <div class="stat-item">
       <span class="stat-number"
@@ -137,7 +134,6 @@ const categorias = ["All", "Certification", "Award", "Recognition"];
     line-height: 1.6;
   }
 
-  /* Filtros */
   .filtros-container {
     display: flex;
     justify-content: center;
@@ -169,7 +165,6 @@ const categorias = ["All", "Certification", "Award", "Recognition"];
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
   }
 
-  /* Grid de Logros */
   .logros-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -258,7 +253,6 @@ const categorias = ["All", "Certification", "Award", "Recognition"];
     color: whitesmoke;
   }
 
-  /* Contenido */
   .logro-titulo {
     color: whitesmoke;
     font-size: 1.35rem;
@@ -297,7 +291,6 @@ const categorias = ["All", "Certification", "Award", "Recognition"];
     margin: 0;
   }
 
-  /* Shine effect */
   .logro-shine {
     position: absolute;
     top: -50%;
@@ -321,7 +314,6 @@ const categorias = ["All", "Certification", "Award", "Recognition"];
     display: none;
   }
 
-  /* Estadísticas */
   .stats-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -372,7 +364,6 @@ const categorias = ["All", "Certification", "Award", "Recognition"];
     letter-spacing: 1px;
   }
 
-  /* Responsive */
   @media (max-width: 768px) {
     .logros-section {
       padding: 3rem 1rem;
@@ -422,15 +413,12 @@ const categorias = ["All", "Certification", "Award", "Recognition"];
     const filters = document.querySelectorAll(".filtro-btn");
     const cards = document.querySelectorAll(".logro-card");
 
-    // ✅ Set the first filter (All) as active by default
     filters[0]?.classList.add("active");
 
     filters.forEach((filter) => {
       filter.addEventListener("click", () => {
-        // Remove active state from all filters
         filters.forEach((f) => f.classList.remove("active"));
 
-        // Add active to the clicked filter
         filter.classList.add("active");
 
         const filterValue = filter.getAttribute("data-filter").toLowerCase();
@@ -439,14 +427,12 @@ const categorias = ["All", "Certification", "Award", "Recognition"];
           const cardType = card.getAttribute("data-tipo").toLowerCase();
 
           if (filterValue === "all") {
-            // Show all cards
             card.classList.remove("hidden");
             setTimeout(() => {
               card.style.opacity = "1";
               card.style.transform = "scale(1)";
             }, 10);
           } else {
-            // Show only cards that match the filter
             if (cardType === filterValue) {
               card.classList.remove("hidden");
               setTimeout(() => {
@@ -465,7 +451,6 @@ const categorias = ["All", "Certification", "Award", "Recognition"];
       });
     });
 
-    // ✨ Initial entry animation
     cards.forEach((card, index) => {
       card.style.opacity = "0";
       card.style.transform = "translateY(20px)";
